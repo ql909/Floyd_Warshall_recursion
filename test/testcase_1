@@ -1,5 +1,5 @@
 import unittest
-from function import floydWarshall, INF
+from recursion import floydWarshall, INF
 
 
 class TestFloydWarshallRecursive(unittest.TestCase):
