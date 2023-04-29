@@ -1,9 +1,9 @@
 import unittest
-from orginal import floydWarshall, INF
+from orginal import floydWarshall_orginal, INF
+
 
 class TestFloydWarshallRecursive(unittest.TestCase):
-    def test_floydWarshall(self):
-        # Test case 1
+    def test_floydWarshall_orginal(self):
         graph1 = [[0, 5, INF, 10],
                  [INF, 0, 3, INF],
                  [INF, INF, 0,   1],
@@ -13,6 +13,6 @@ class TestFloydWarshallRecursive(unittest.TestCase):
                           [INF, 0, 3, 4],
                           [INF, INF, 0, 1],
                           [INF, INF, INF, 0]]
-        self.assertEqual(floydWarshall(graph1), expected_output1)
+        self.assertEqual(floydWarshall_orginal(graph1), expected_output1)
 if __name__ == '__main__':
     unittest.main()
