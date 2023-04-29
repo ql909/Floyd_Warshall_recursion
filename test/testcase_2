@@ -1,7 +1,8 @@
+# Import testing package
 import unittest
 from recursion import floydWarshall, INF
 
-
+# Unit Tests
 class TestFloydWarshallRecursive(unittest.TestCase):
     def test_floyd_warshall_recursive(self):
         graph = [[0, 8, INF, INF, 5, 3, INF, INF],
