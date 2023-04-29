@@ -5,8 +5,6 @@
 
 INF = 99999
 
-# Number of vertices in the graph
-V = 4
 
 # Solves all pair shortest path
 # via Floyd Warshall Algorithm
@@ -19,8 +17,8 @@ def floydWarshall(graph):
         if k == 0:
             return dist
         # Recursive case
-        for i in range(V):
-            for j in range(V):
+        for i in range(n):
+            for j in range(n):
                 # Update distance between i and j
                 dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
         # Recursive call
@@ -39,7 +37,7 @@ def floydWarshall(graph):
  
     dist = list(map(lambda i: list(map(lambda j: j, i)), graph))
     # Call recursive helper function
-    dist = _floydWarshallHelper(dist, V - 1)
+    dist = _floydWarshallHelper(dist, n - 1)
     printSolution(dist)
  
  
@@ -47,13 +45,13 @@ def floydWarshall(graph):
 def printSolution(dist):
     print("Following matrix shows the shortest distances\
  between every pair of vertices")
-    for i in range(V):
-        for j in range(V):
+    for i in range(n):
+        for j in range(n):
             if(dist[i][j] == INF):
                 print("%7s" % ("INF"), end=" ")
             else:
                 print("%7d\t" % (dist[i][j]), end=' ')
-            if j == V-1:
+            if j == n-1:
                 print()
  
  
@@ -68,11 +66,11 @@ if __name__ == "__main__":
            \|/         |
            (1)------->(2)
                 3           """
-    V = 4
-    graph = [[0, 5, INF, 10],
-             [INF, 0, 3, INF],
-             [INF, INF, 0,   1],
-             [INF, INF, INF, 0]
+    graph = [[0, 3, INF, 5],
+             [2, 0, INF, 4],
+             [INF, 1, 0, INF],
+             [INF, INF, 2, 0]
              ]
+    n = len(graph)
     # Function call
     floydWarshall(graph)
