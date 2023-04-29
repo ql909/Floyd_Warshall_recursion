@@ -1,7 +1,6 @@
 # Directory Tree
 
 .Main
-||____dependencies.txt
 |____directorytree.txt
 |____LICENSE
 |____requirement.txt
