@@ -14,14 +14,5 @@ class TestFloydWarshallRecursive(unittest.TestCase):
                           [INF, INF, 0, 1],
                           [INF, INF, INF, 0]]
         self.assertEqual(floydWarshall(graph1), expected_output1)
-        graph2 = [[0, INF, -2, INF],
-                 [4, 0, 3, INF],
-                 [INF, INF, 0, 2],
-                 [INF, -1, INF, 0]
-                 ]
-        expected_output2 = [[0, -1, -2, 0],
-                          [4, 0, 2, 4],
-                          [5, 1, 0, 2],
-                          [3, -1, 1, 0]]
 if __name__ == '__main__':
     unittest.main()
