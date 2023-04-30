@@ -1,5 +1,4 @@
 # Floyd Warshall Algorithm using Recursion with Python
-*cs linguist-language=python
 
 def floydWarshall(dist):
 
